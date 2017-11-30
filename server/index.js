@@ -1,11 +1,10 @@
 const express = require('express');
-
 const app = express();
 const bodyParser = require('body-parser');
 const db = require('../db/index.js');
+const session = require('express-session');
 
 const PORT = process.env.PORT || 3000;
-const session = require('express-session');
 
 app.use(express.static(`${__dirname}/../client/public/`));
 app.use(bodyParser.urlencoded({ extended: true }));
