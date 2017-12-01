@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
 
 // SCHEMAS
@@ -29,10 +28,10 @@ const habitSchema = new Schema({
 
 // Schema for users.
 const userSchema = new Schema({
-  username: { type: String, unique: true },
+  username: {type: String, unique: true},
   password: String,
   habitList: Array, // Used to populate dropdowns, e.g., ['smoking', 'running']
-  habits: [habitSchema], // Embeded subdocument.
+  habits: [habitSchema],  // Embeded subdocument.
 });
 
 module.exports = mongoose.model('User', userSchema);
