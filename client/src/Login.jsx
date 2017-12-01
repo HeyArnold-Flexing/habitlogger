@@ -37,8 +37,6 @@ class Login extends React.Component {
             <h1>Login or Signup to start logging</h1>
             <div className="login col-md-4">
               <h4>Log In</h4>
-              <TextField hintText="Enter Username" floatingLabelText="Username" onKeyUp={this.handleTextFieldChange} />
-              <br />
               <TextField
                 id="userLogin"
                 hintText="Enter Username"
