@@ -29,7 +29,6 @@ class OccurenceScatterPlot extends React.Component {
     var tooltip = d3.select("body").append("div")	
         .attr("class", "tooltip")				
         .style("opacity", 0);
-
     var tooltip = d3.select("body").append("div")	
         .attr("class", "tooltip")				
         .style("opacity", 0);
@@ -54,11 +53,8 @@ class OccurenceScatterPlot extends React.Component {
     	// return strictIsoParse(e);
     });
 
-
-
     var mappedDeadline = 
     d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(data.deadline);
-
 
 
 		let x = d3
