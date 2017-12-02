@@ -121,7 +121,6 @@ class Chart extends React.Component {
 					unit: "hours",
 					timeframe: "week",
 					deadline: "2017-10-31T14:38:15.074Z",
-
 					occurrences: [
 						{
 							timestamp: "2017-08-22T11:34:15.075Z",
@@ -130,13 +129,10 @@ class Chart extends React.Component {
 						},
 						{
 							timestamp: "2017-09-24T14:37:15.075Z",
-
 							value: "7",
 							notes: "had a great day, sunny outside."
 						},
 						{
-
-
 							timestamp: "2017-08-27T17:42:15.075Z",
 							value: "9",
 							notes: "Polar bear crossed road."
@@ -152,7 +148,7 @@ class Chart extends React.Component {
 							notes: "had a great day, sunny outside."
 						},
 						{
-							timestamp: "2017-09-02T13:34:15.075Z",
+							timestamp: "2017-11-06T13:34:15.075Z",
 							value: "67",
 							notes: "had a great day, sunny outside."
 						}

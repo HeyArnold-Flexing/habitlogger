@@ -30,6 +30,10 @@ class OccurenceScatterPlot extends React.Component {
         .attr("class", "tooltip")				
         .style("opacity", 0);
 
+    var tooltip = d3.select("body").append("div")	
+        .attr("class", "tooltip")				
+        .style("opacity", 0);
+
     // Mapping single instance data to an array of values and dates
 
     // An Array of occurence values in a single habit
@@ -51,8 +55,10 @@ class OccurenceScatterPlot extends React.Component {
     });
 
 
+
     var mappedDeadline = 
     d3.utcParse("%Y-%m-%dT%H:%M:%S.%LZ")(data.deadline);
+
 
 
 		let x = d3
@@ -167,7 +173,6 @@ class OccurenceScatterPlot extends React.Component {
     			.attr('x', x(mappedDeadline) / 2)
     			.attr('y', y([data.goal]) - 3)
     			.text('GOAL')
-
     return (
     	<div>
     		{div.toReact()}
