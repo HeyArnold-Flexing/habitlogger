@@ -130,12 +130,13 @@ class Chart extends React.Component {
 						},
 						{
 							timestamp: "2017-09-24T14:37:15.075Z",
-							value: "7",
+							value: "25",
 							notes: "had a great day, sunny outside."
 						},
 						{
 							timestamp: "2017-08-27T17:42:15.075Z",
 							value: "9",
+
 							notes: "Polar bear crossed road."
 						},
 						{

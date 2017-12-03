@@ -117,12 +117,12 @@ class BarGraph extends React.Component {
 
 
     data.occurrences.forEach((item, index, array) => {
-    	svg.append('circle')
-    		.attr('class', 'scatter-point')
-    		.style('z-index', '9999')
-    		.attr('cx', x(mappedDates[index]))
-    		.attr('cy', y([item.value]))
-    		.attr('r', item.value / 2)
+    	svg.append('rect')
+    		.attr('class', 'scatter-bar')
+    		.attr('x', x(mappedDates[index]))
+    		.attr('y', height - margin.bottom - margin.top)
+    		.attr('width', width / array.length)
+            .attr('height', item.value + 25)
     		.style('fill', '#F7F5E6')
     		.on('mouseover', function() {
     			tooltip.transition()
@@ -139,14 +139,6 @@ class BarGraph extends React.Component {
     
     		})
    
-    	if (validLine(index, item)) {
-    	svg.append('line')
-    		.style('stroke', '#E8E8E8')
-    		.attr('x1', x(mappedDates[index]))
-    		.attr('x2', x(mappedDates[index + 1]))
-    		.attr('y1', y([item.value]))
-    		.attr('y2', y(validLine(index, item)))
-			}   
     });
 
     var goalLegend = d3.select('body').append('div')
