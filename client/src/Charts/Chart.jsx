@@ -137,7 +137,6 @@ class Chart extends React.Component {
 
 							timestamp: "2017-08-27T17:42:15.075Z",
 							value: "9",
-
 							notes: "Polar bear crossed road."
 						},
 						{
@@ -184,7 +183,7 @@ class Chart extends React.Component {
 
 			{ this.state.allHabits ? 
 			<OccurenceScatterPlot data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height}/> :
-			<BarGraph data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
+			<AllPieChart data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
 			}
 		</div>)
 	}
