@@ -5,13 +5,14 @@ import axios from "axios";
 import $ from "jquery";
 import OccurenceScatterPlot from './OccurenceScatterPlot.jsx';
 import AllPieChart from './AllPieChart.jsx';
+import BarGraph from './BarGraph.jsx';
 
 class Chart extends React.Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			allHabits: true,
+			allHabits: false,
 			selectedHabit: false,
 			width: 500,
 			height: 350,
@@ -180,7 +181,7 @@ class Chart extends React.Component {
 
 			{ this.state.allHabits ? 
 			<OccurenceScatterPlot data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height}/> :
-			<AllPieChart data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
+			<BarGraph data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
 			}
 		</div>)
 	}
