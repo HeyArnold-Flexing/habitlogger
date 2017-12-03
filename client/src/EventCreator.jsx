@@ -3,14 +3,19 @@ import PropTypes from 'prop-types';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
 =======
 import Larrow from './Larrow.jsx';
 >>>>>>> component based animation system
+=======
+import Paper from 'material-ui/Paper';
+import Larrow from './LarrowIcon.jsx';
+>>>>>>> clock anim component rough
 
-const WAIT_INTERVAL = 1000;
+const WAIT_INTERVAL = 1250;
 const style = {
   marginLeft: 20,
 };
@@ -48,7 +53,7 @@ export default class EventCreator extends React.Component {
 
     this.setState({ [name]: target.value });
 
-    this.time = setTimeout(function() {
+    this.timer = setTimeout(function() {
       self.handleFocus(picker[name])
     }, WAIT_INTERVAL);
 
@@ -81,6 +86,7 @@ export default class EventCreator extends React.Component {
   render() {
     return (
       <div className="eventCreator">
+<<<<<<< HEAD
         <Larrow currentFocus={this.state.currentFocus}/>
         <TextField
           name="event"
@@ -122,6 +128,43 @@ export default class EventCreator extends React.Component {
           disableYearSelection={false}
           onChange={this.handleDeadline}
         />
+=======
+        <h1>Habit Creator</h1>
+        <Larrow currentFocus={this.state.currentFocus}/>
+        <Paper zDepth={1} style={{ width: '50%' }}>
+          <TextField
+            name="event"
+            value={this.state.event}
+            hintText="Habit name"
+            style={style}
+            underlineShow={false}
+            onChange={this.handleTextFieldChange}
+          />
+          <Divider />
+          <TextField
+            name="units"
+            hintText="Habit units"
+            style={style}
+            underlineShow={false}
+            onChange={this.handleTextFieldChange}
+            value={this.state.units}
+          />
+          <Divider />
+          <TextField
+            name="limit"
+            value={this.state.limit}
+            type="number"
+            hintText="Goal/Limit"
+            style={style}
+            underlineShow={false}
+            onChange={this.handleTextFieldChange}
+          />
+          <Divider />
+        </Paper>
+        <br />
+        <button onClick={this.handleSubmit}>Create Habit</button>
+        <br />
+>>>>>>> clock anim component rough
       </div>
     );
   }

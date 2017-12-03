@@ -4,6 +4,7 @@ import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Clock from './ClockIcon.jsx';
 
 class DataLogger extends React.Component {
   constructor(props) {
@@ -59,6 +60,7 @@ class DataLogger extends React.Component {
             return <MenuItem key={index} value={index} primaryText={event} />;
           })}
         </SelectField>
+        <Clock />
         <DatePicker
           hintText="Enter the date"
           autoOk={true}
