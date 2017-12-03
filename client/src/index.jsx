@@ -215,6 +215,7 @@ class App extends React.Component {
           />
           <EventSelector habits={this.state.habits} selectHabit={this.selectHabit} />
           <LoggerCalendar />
+          <Chart />
         </div>
       );
     }
