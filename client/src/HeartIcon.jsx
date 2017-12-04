@@ -8,16 +8,16 @@ class Heart extends React.Component {
   }
   componentDidMount() {
     node = ReactDOM.findDOMNode(this);
-    TweenMax.to(node, 1.5, {x: 155, y: 42, width: 30, height: 30})
+    TweenMax.to(node, 1.5, {x: 20, y: 1, width: 30, height: 30, ease:Bounce.easeOut})
   }
   componentWillReceiveProps(nextProps) {
-    let change = {y: 39};
+    let change = {opacity: 0, y: 30};
     let time = 1;
     TweenMax.to(node, time, change)
   }
   render(){
     return (
-      <img src={HeartSVG} alt="lukeg" x="330" height="400px"/>
+      <img src={HeartSVG} alt="lukeg" />
       )
   }
 }

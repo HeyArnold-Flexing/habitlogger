@@ -8,7 +8,7 @@ class Clock extends React.Component {
   }
   componentDidMount() {
     node = ReactDOM.findDOMNode(this);
-    TweenMax.to(node, 5, {opacity: 1, x: 40, y: 100, width: 30, ease:Bounce.easeOut})
+    TweenMax.to(node, 5, {opacity: 1, x: 0, y: 0, width: 30, ease:Bounce.easeOut})
   }
   componentWillReceiveProps(nextProps) {
 

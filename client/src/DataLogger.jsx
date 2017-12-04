@@ -53,13 +53,13 @@ class DataLogger extends React.Component {
   render() {
     return (
       <div className="data-logger">
+        <Clock />
         <h1>Data Logger</h1>
         <SelectField floatingLabelText="Select Habit" value={this.state.value} onChange={this.logChange}>
           {this.props.habits.map((event, index) => {
             return <MenuItem key={index} value={index} primaryText={event} />;
           })}
         </SelectField>
-        <Clock />
         <DatePicker
           hintText="Enter the date"
           autoOk={true}
