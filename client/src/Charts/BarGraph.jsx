@@ -13,9 +13,8 @@ class BarGraph extends React.Component {
 
     render() {
         const div = new ReactFauxDOM.Element("div");
-        let data = this.props.habits[2];
-        console.log("DATA >>>>>>>>>", data);
-
+        let data = this.props.habits[4];
+        console.log('data', data)
         // Container Sizing
         let padding = 25;
         let margin = { top: 40, right: 40, bottom: 40, left: 40 },
@@ -75,7 +74,7 @@ class BarGraph extends React.Component {
             .append("svg")
             .attr("width", this.props.width)
             .attr("height", this.props.height)
-            .style("background-color", "#333A56")
+            .style("background-color", "#52658F")
             .append("g")
             .attr("transform", `translate(${margin.left},${margin.top})`);
 
@@ -105,7 +104,6 @@ class BarGraph extends React.Component {
         }
 
         data.occurrences.forEach((item, index, array) => {
-            console.log(y(item.value));
             svg
                 .append("rect")
                 .attr("class", "scatter-bar")

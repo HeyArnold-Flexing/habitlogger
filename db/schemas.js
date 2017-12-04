@@ -22,7 +22,7 @@ const habitSchema = new Schema({
   habit: { type: String, unique: true }, // e.g., smoking.
   limit: Number, // e.g., 5 (per timeframe)
   unit: String, // e.g., cigars
-  deadline: Date,
+  deadline: {type: Date, required: true },
   timeframe: String, // e.g., day / week
   occurrences: [occurrenceSchema], // Embeded subdocument.
 });

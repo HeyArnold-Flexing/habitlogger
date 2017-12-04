@@ -131,6 +131,12 @@ app.get('/sessionCheck', (req, res) => {
   res.send(req.session);
 });
 
+app.get('/graphData', (req, res) => {
+  db.getGraphData(req.session.user, (graphData) => {
+    res.send(graphData);
+  });
+})
+
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });
