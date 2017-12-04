@@ -183,7 +183,7 @@ class Chart extends React.Component {
 
 			{ this.state.allHabits ? 
 			<OccurenceScatterPlot data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height}/> :
-			<AllPieChart data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
+			<BarGraph data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
 			}
 		</div>)
 	}
