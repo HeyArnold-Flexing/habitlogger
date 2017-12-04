@@ -5,7 +5,8 @@ import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
-import Larrow from './Larrow.jsx';
+import Larrow from './LarrowIcon.jsx';
+import Darrow from './DarrowIcon.jsx';
 
 const WAIT_INTERVAL = 1250;
 const style = {
@@ -63,22 +64,30 @@ export default class EventCreator extends React.Component {
       event: '',
       units: '',
       limit: '',
-      currentFocus: 4
+      currentFocus: 6
     });
   }
 
   handleTimeFrame(e, index) {
     this.props.handleChange(e, index);
+    this.setState({
+      currentFocus: 4
+    });
   }
 
   handleDeadline(e, date) {
     this.props.handleDeadlineChange(e, date);
+    this.setState({
+      currentFocus: 5
+    });
   }
 
   render() {
     return (
       <div className="eventCreator">
-        <Larrow currentFocus={this.state.currentFocus}/>
+        <Larrow currentFocus={this.state.currentFocus} />
+        <Darrow currentFocus={this.state.currentFocus} />
+        <div>
         <TextField
           name="event"
           value={this.props.event}
@@ -119,6 +128,7 @@ export default class EventCreator extends React.Component {
           disableYearSelection={false}
           onChange={this.handleDeadline}
         />
+        </div>
       </div>
     );
   }

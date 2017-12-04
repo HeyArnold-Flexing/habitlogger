@@ -51,7 +51,6 @@ class DataLogger extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="data-logger">
         <h1>Data Logger</h1>

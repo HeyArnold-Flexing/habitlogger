@@ -84,7 +84,6 @@ export default class AppToolbar extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     const actions = [
       <FlatButton label="Save" primary={true} onClick={this.createHabit} />,
       <FlatButton label="Cancel" secondary={true} onClick={this.toggleDialog} />,
@@ -117,7 +116,7 @@ export default class AppToolbar extends React.Component {
           <ToolbarGroup>
             <RaisedButton label="Delete Habit"  />
           </ToolbarGroup>
-       
+
         </Toolbar>
       </div>
     );
