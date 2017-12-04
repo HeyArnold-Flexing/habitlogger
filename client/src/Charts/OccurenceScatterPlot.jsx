@@ -13,7 +13,7 @@ class OccurenceScatterPlot extends React.Component {
 
     render() {
         const div = new ReactFauxDOM.Element("div");
-        let data = this.props.habits[2];
+        let data = this.props.habits[0];
 
         // Container Sizing
         let padding = 25;
@@ -36,13 +36,13 @@ class OccurenceScatterPlot extends React.Component {
         // Mapping single instance data to an array of values and dates
 
         // An Array of occurence values in a single habit
-        var valueRange = this.props.habits[2].occurrences.reduce((acc, cur) => {
+        var valueRange = this.props.habits[0].occurrences.reduce((acc, cur) => {
             acc.push(cur.value);
             return acc;
         }, []);
-
+        console.log(valueRange);
         // An array of dates in the instance
-        var dateRange = this.props.habits[2].occurrences.reduce((acc, cur) => {
+        var dateRange = this.props.habits[0].occurrences.reduce((acc, cur) => {
             acc.push(cur.timestamp);
             return acc;
         }, []);
@@ -64,7 +64,7 @@ class OccurenceScatterPlot extends React.Component {
 
         let y = d3
             .scaleLinear()
-            .domain([data.goal + Math.max.apply(null, valueRange), 0])
+            .domain([data.limit + Math.max.apply(null, valueRange), 0])
             .range([0, height]);
 
         let xAxis = d3
@@ -157,8 +157,8 @@ class OccurenceScatterPlot extends React.Component {
             .append("line")
             .attr("x1", 0)
             .attr("x2", x(mappedDeadline))
-            .attr("y1", y([data.goal]))
-            .attr("y2", y([data.goal]))
+            .attr("y1", y([data.limit]))
+            .attr("y2", y([data.limit]))
             .attr("stroke", "red")
             .attr("stroke-width", "3");
 
@@ -168,14 +168,14 @@ class OccurenceScatterPlot extends React.Component {
             .style("fill", "red")
             .attr("text-anchor", "middle")
             .attr("x", x(mappedDeadline) / 2)
-            .attr("y", y([data.goal]) - 3)
+            .attr("y", y([data.limit]) - 3)
             .text("GOAL");
 
         svg
             .append("circle")
             .attr("class", "deadline-point")
             .attr("cx", x(mappedDeadline))
-            .attr("cy", y([data.goal]))
+            .attr("cy", y([data.limit]))
             .attr("r", 10)
             .style("fill", "#00bcd1")
             .style("stroke", "white");
@@ -185,7 +185,7 @@ class OccurenceScatterPlot extends React.Component {
             .style("fill", "E8E8E8")
             .attr("text-anchor", "middle")
             .attr("x", x(mappedDeadline))
-            .attr("y", y([data.goal]) - 15)
+            .attr("y", y([data.limit]) - 15)
             .text("Deadline")
             .style("font-size", "0.65em");
         return <div>{div.toReact()}</div>;

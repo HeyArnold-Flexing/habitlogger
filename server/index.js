@@ -48,6 +48,7 @@ const checkLoginAuthStatus = (req, res, next) => {
   if (isLoggedIn && isActualUser) {
     next();
   } else {
+
     res.redirect('/');
   }
 };
@@ -95,8 +96,10 @@ app.get('/logout', (req, res) => {
 
 app.get('/api/:username', (req, res) => {
   // Get the user's list of habits.
+  console.log('habit list from endpoint', req.params.username);
   // Used to field selectors on client.
   db.getUserHabits(req.params.username, (habitList) => {
+    console.log('true habits', habitList);
     res.send(habitList);
   });
 });

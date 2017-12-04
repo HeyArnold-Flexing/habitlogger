@@ -17,80 +17,7 @@ class Chart extends React.Component {
 			bargraph: false,
 			width: 500,
 			height: 400,
-			habits: [
-				{
-					habit: "rolling",
-					goal: 5,
-					unit: "rolls",
-					timeframe: "day",
-					deadline: "2017-12-31T14:38:15.074Z",
-					occurrences: [
-						{
-							timestamp: "2017-11-22T14:34:15.075Z",
-							value: "1",
-							notes: "had a great day, sunny outside."
-						}
-					]
-				},
-				{
-					habit: "smoking",
-					goal: 12,
-					unit: "packs",
-					timeframe: "day",
-					deadline: "2017-12-31T14:38:15.074Z",
-					occurrences: [
-						{
-							timestamp: "2017-10-22T14:34:15.075Z",
-							value: "1",
-							notes: "had a great day, sunny outside."
-						},
-						{
-							timestamp: "2017-11-23T14:34:15.075Z",
-							value: "3",
-							notes: "Car accident."
-						},
-						{
-							timestamp: "2017-12-22T14:34:15.075Z",
-							value: "4",
-							notes: "had a great day, sunny outside."
-						}
-					]
-				},
-				{
-					habit: "Video Games",
-					goal: 25,
-					unit: "hours",
-					timeframe: "week",
-					deadline: "2017-10-31T14:38:15.074Z",
-					occurrences: [
-						{
-							timestamp: "2017-08-22T11:34:15.075Z",
-							value: "6",
-							notes: "Car accident."
-						},
-						{
-							timestamp: "2017-08-27T17:42:15.075Z",
-							value: "9",
-							notes: "Polar bear crossed road."
-						},
-						{
-							timestamp: "2017-10-30T14:34:15.075Z",
-							value: "12",
-							notes: "warm night"
-						},
-						{
-							timestamp: "2017-11-02T13:34:15.075Z",
-							value: "2",
-							notes: "had a great day, sunny outside."
-						},
-						{
-							timestamp: "2017-11-06T13:34:15.075Z",
-							value: "67",
-							notes: "had a great day, sunny outside."
-						}
-					]
-				}
-			]
+			habits: [],
 		};
 
 		this.showAllHabits = this.showAllHabits.bind(this);
@@ -103,12 +30,14 @@ class Chart extends React.Component {
 		axios
 		  .get('/graphData')
 		  .then(res => {
-				this.setState({
+		  	if (res.data) {
+				self.setState({
 					habits: res.data
-				})
+				});
+			}
 		  })
 		  .catch(err => {
-		    console.log(err);
+		    console.log('error code here', err);
 		  });
 	}
 
@@ -119,6 +48,7 @@ class Chart extends React.Component {
 			bargraph: false
 		});
 	}
+
 	showIndividualHabit() {
 		this.setState({
 			allHabits: false,
@@ -186,14 +116,3 @@ class Chart extends React.Component {
 }
 
 export default Chart;
-
-//   svg.selectAll(".bar")
-//     .data(data)
-//     .enter().append("rect")
-//     .attr("class", "bar")
-//     .attr("x", (d) => x(d.letter))
-//     .attr("width", 20)
-//     .attr("y", (d) => y(d.frequency))
-//     .attr("height", (d) => {return height - y(d.frequency)});
-
-//   //DOM manipulations done, convert to React

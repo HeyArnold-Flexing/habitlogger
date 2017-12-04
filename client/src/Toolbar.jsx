@@ -55,6 +55,7 @@ export default class AppToolbar extends React.Component {
       value: 0,
       timeframes: ['Day', 'Week', 'Month'],
       currentTimeframe: 'Day',
+      deadline: '',
     };
 
     this.toggleDialog = this.toggleDialog.bind(this);
@@ -77,7 +78,7 @@ export default class AppToolbar extends React.Component {
   }
 
   createHabit() {
-    this.props.createHabit(this.state.event, this.state.units, this.state.limit, this.state.currentTimeframe);
+    this.props.createHabit(this.state.event, this.state.units, this.state.limit, this.state.currentTimeframe, this.state.deadline);
     this.setState({
       event: '',
       units: '',

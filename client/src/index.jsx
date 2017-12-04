@@ -49,7 +49,7 @@ class App extends React.Component {
       
   }
 
-  componentDidMount(){
+  componentWillMount(){
     this.getUserData();
   }
 
@@ -57,7 +57,6 @@ class App extends React.Component {
     axios
       .post('/login', { username: username, password: password })
       .then(res => {
-        console.log(res.data);
         if (res.data) {
           this.setState({ username: res.data });
           this.getUserData();
@@ -114,7 +113,7 @@ class App extends React.Component {
     axios
       .get(`/api/${username}`)
       .then(res => {
-        console.log('get user data response', res.data);
+        console.log(this.state.username);
         this.setState({
           habits: res.data,
         });
@@ -156,8 +155,8 @@ class App extends React.Component {
         occurrence: {
           timestamp: time,
           value: quantity,
+          notes: notes
         },
-        notes: notes,
       };
       axios
         .post(`/api/${this.state.username}/log`, occurrence)
@@ -207,7 +206,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('habit state', this.state.habits);
     let initialPage;
     if (!this.state.username) {
       initialPage = <Login login={this.login} signup={this.signup} />;
