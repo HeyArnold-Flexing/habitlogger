@@ -39,11 +39,8 @@
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
     "react-faux-dom": "^4.1.0",
-<<<<<<< HEAD
     "react-yearly-calendar": "^1.1.5",
-=======
     "underscore": "^1.8.3",
->>>>>>> Added a rough pie chart.
     "webpack": "^3.8.1"
   },
   "devDependencies": {

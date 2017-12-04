@@ -176,13 +176,14 @@ class Chart extends React.Component {
 
 
 	render() {
-		return (<div>
-			<button className="effect--1" onClick={this.showAllHabits}>All Habits</button>
-			<button className="effect--2" onClick={this.showIndividualHabit}>Individual Habit</button>
+		return (<div className='chart-container'>
+			<button className="effect--1 graph-button" onClick={this.showAllHabits}>All Habits</button>
+			<button className="effect--2 graph-button" onClick={this.showIndividualHabit}>Bar Graph</button>
+			<button className="effect--3 graph-button" onClick={this.showIndividualHabit}>Scatterplot</button>
 
 			{ this.state.allHabits ? 
 			<OccurenceScatterPlot data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height}/> :
-			<AllPieChart data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
+			<BarGraph data={this.state.data} habitData={this.state.habitData} habits={this.state.habits} width={this.state.width} height={this.state.height} />
 			}
 		</div>)
 	}
