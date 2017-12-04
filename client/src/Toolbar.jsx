@@ -132,7 +132,7 @@ export default class AppToolbar extends React.Component {
             </Dialog>
           </ToolbarGroup>
           <ToolbarGroup>
-            <EventSelector habits={this.props.habits} selectHabit={this.props.selectHabit} />
+            <EventSelector habits={this.props.habits} selectHabit={this.props.selectHabit} getHabitsInfo={this.props.getHabitsInfo}/>
           </ToolbarGroup>
           <ToolbarGroup>
             <RaisedButton label="Delete Habit"  />
