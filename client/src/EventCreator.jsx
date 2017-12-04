@@ -2,18 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
-<<<<<<< HEAD
-<<<<<<< HEAD
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import DatePicker from 'material-ui/DatePicker';
-=======
 import Larrow from './Larrow.jsx';
->>>>>>> component based animation system
-=======
-import Paper from 'material-ui/Paper';
-import Larrow from './LarrowIcon.jsx';
->>>>>>> clock anim component rough
 
 const WAIT_INTERVAL = 1250;
 const style = {
