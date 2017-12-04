@@ -86,7 +86,6 @@ export default class EventCreator extends React.Component {
   render() {
     return (
       <div className="eventCreator">
-<<<<<<< HEAD
         <Larrow currentFocus={this.state.currentFocus}/>
         <TextField
           name="event"
@@ -128,43 +127,6 @@ export default class EventCreator extends React.Component {
           disableYearSelection={false}
           onChange={this.handleDeadline}
         />
-=======
-        <h1>Habit Creator</h1>
-        <Larrow currentFocus={this.state.currentFocus}/>
-        <Paper zDepth={1} style={{ width: '50%' }}>
-          <TextField
-            name="event"
-            value={this.state.event}
-            hintText="Habit name"
-            style={style}
-            underlineShow={false}
-            onChange={this.handleTextFieldChange}
-          />
-          <Divider />
-          <TextField
-            name="units"
-            hintText="Habit units"
-            style={style}
-            underlineShow={false}
-            onChange={this.handleTextFieldChange}
-            value={this.state.units}
-          />
-          <Divider />
-          <TextField
-            name="limit"
-            value={this.state.limit}
-            type="number"
-            hintText="Goal/Limit"
-            style={style}
-            underlineShow={false}
-            onChange={this.handleTextFieldChange}
-          />
-          <Divider />
-        </Paper>
-        <br />
-        <button onClick={this.handleSubmit}>Create Habit</button>
-        <br />
->>>>>>> clock anim component rough
       </div>
     );
   }
