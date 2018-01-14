@@ -3,12 +3,15 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const db = require('../db/index.js');
-const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.PORT || 5567;
+
 const session = require('express-session');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../webpack.config');
+
 const compiler = webpack(config);
 const sendMessageCron = require('./cronMessage.js').sendMessageCron;
 
@@ -131,6 +134,7 @@ app.post('/api/:username/log', checkLoginAuthStatus, (req, res) => {
   // Log an occurrence.
   // Expects a JSON with a timestamp, habit, and value.
   // {habit:'running', unit:'1', timestamp: '2017-11-28T00:23:28.341Z'}
+  console.log('it gets here');
   db.logOccurrence(req.body, (occurrence) => {
     res.send(occurrence);
   });
@@ -145,6 +149,7 @@ app.get('/graphData', (req, res) => {
     res.send(graphData);
   });
 })
+
 
 sendMessageCron.start();
 
