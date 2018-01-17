@@ -5,6 +5,7 @@ const BUILD_DIR = path.resolve(__dirname, 'client/public'); // path //dirname/sr
 const APP_DIR = path.resolve(__dirname, 'client/src'); // index.jsx directory (react file)
 
 module.exports = {
+  context: __dirname + '/client/src',
   entry: ['webpack-hot-middleware/client?reload=true', `${APP_DIR}/index.jsx`], // FILE WE WILL BUNDLE FROM
   output: {
     path: BUILD_DIR, // WHERE BUNDLE.JS WILL GO
