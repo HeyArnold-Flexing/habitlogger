@@ -13,7 +13,8 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const config = require('../webpack.config');
 
 const compiler = webpack(config);
-const sendMessageCron = require('./cronMessage.js').sendMessageCron;
+// commented out because not working on server
+// const sendMessageCron = require('./cronMessage.js').sendMessageCron;
 
 app.use(
   webpackDevMiddleware(compiler, {
@@ -151,7 +152,7 @@ app.get('/graphData', (req, res) => {
 })
 
 
-sendMessageCron.start();
+// sendMessageCron.start();
 
 app.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
